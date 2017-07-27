@@ -1,0 +1,17 @@
+1.  Stdint.h is a header file that allows one to use a set of typedefs that specify exact-width integer types and their min/max values.
+2.  Using uint8_t, uint32_t, int32_t, and uint16_t allows one to define the maximum value of that datatype.  For example, maximum value of uint8_t (or unsigned char, or 1 byte) = 255
+3.  Total bytes in a:
+BYTE - one byte 
+DWORD - 4 bytes
+LONG - 4 bytes
+WORD - 2 bytes
+4.  Characters B, then M
+5.  bfSize is the size of the whole bmp file including the headerfiles.
+    biSize is the size of the BITMAPINFOHEADER header file and is a constant size of 40 bytes.
+6.  If biheight is negative the bitmap is a top-down DIB and its origin is the upper-left corner.
+7.  biBitCount specifies the number of bits pers pixel for a RGB file
+8.  fopen will return null if the file is missing, the file (in line 27) is read only, the network is down, or there are permission issues.
+9.  On success, fread() and fwrite() return the number of items read or written, or the number of bytes transferred, only when size is 1 per the CS50 reference
+10. Each row of a BMP files takes up (8 pixels) or 24 bytes, therefore the number in a scanline must be a multiple of 4.  If it's not the file will contain padding. 
+11. FSEEK is used to move file pointer position to the given location.
+12. A variable of FSEEK, SEEK_CUR moves the file pointer to a given location vs. the beginning or the end of a file.
