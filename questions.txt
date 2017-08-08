@@ -1,0 +1,10 @@
+0.  Pneumonoultramicroscopicsilicovolcanoconiosis is a pneumoconiosis caused by inhalation of very fine silicate or quartz dust (ref - https://www.merriam-webster.com/medical/pneumonoultramicroscopicsilicovolcanoconiosis), but in the context of the speller pset, it demonstrates a 45 character string length.  This is the max length that should be anticipated for text related to this pset.
+1.  Getrusage can be interpreted as a function that gets resource usage.  In the case of Pset5, it was used to tract metrics associated with the use of the hash table struct. 
+2.  There are 16 members in the variable of type struct rusage.
+3.  Passing a large struct by value would be slow and take up too much memory.
+4.  In the for loop of the main function we are spell checking each word in the text by first looking to see if the word contains alphabetical characters. 
+    If so we are adding a character at the end of each word to store the terminator.  Afterword, we check to see if the word is greater than the max length. 
+    If the the character is not alphabetical we check to see if it is a number and skip over that character. We then add a terminator to the end of the word
+    update the usage metrics, increase the word count, and check if the word is in the dictionary, printing the word in the mispelled list if not.
+5.  By just using fscanf, we wouldn't be able to account for dismissing (or not checking words) that don't align to our specifications (too long, include non alphabetical or numerical characters, ect.)  It would throw our stats off. 
+6.  Declaring the parameters for check and load as const means that the name of the char cannot change, but the pointer can.  In doing so, we are preventing changes to the word passed. 
