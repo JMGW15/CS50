@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    history
+{% endblock %}
+
+{% block main %}
+<table>
+    <tr>
+        <th>TRANSACTION DATE</th>
+        <th>SYMBOL</th>
+        <th># OF SHARES</th>
+        <th>CURRENT PRICE</th>
+        <th>ACTION</th>
+    </tr>
+    {% for rows in portfolio %}
+    <tr>
+        <td>{{rows.timestamp}}</td>
+        <td>{{rows.symbols}}</td>
+        <td>{{rows.shares}}</td>
+        <td>${{rows.buy_price}}</td>
+        <td>{{rows.action}}</td>
+    </tr>
+    {% endfor %}
+    </table>
+    
+{% endblock %}
