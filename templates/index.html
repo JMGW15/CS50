@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    index
+{% endblock %}
+
+{% block main %}
+<table>
+    <tr>
+        <th>SYMBOL</th>
+        <th>NAME</th>
+        <th>SHARES OWNED</th>
+        <th>CURRENT PRICE</th>
+        <th>VALUE OF HOLDING</th>
+    </tr>
+    {% for rows in portfolio %}
+    <tr>
+        <td>{{rows.symbol}}</td>
+        <td>{{rows.name}}</td>
+        <td>{{rows.shares}}</td>
+        <td>${{rows.price}}</td>
+        <td>${{rows.value}}</td>
+    </tr>
+    {% endfor %}
+    </table>
+    
+    <table>
+    <tr>
+        <th>TOTAL CASH</th>
+    </tr>
+    <tr>
+        <td>${{user_cash}}</td>
+    </tr>
+    </table>
+    
+    <table>
+    <tr>
+        <th>GRAND TOTAL</th>
+    </tr>
+    <tr>
+        <td>${{grand_total}}</td>
+    </tr>
+    </table>
+    <br>
+<form action="http://ide50-jen-mgw.cs50.io/deposit">
+    <input type="submit" value="Deposit cash" />
+</form>
+{% endblock %}
