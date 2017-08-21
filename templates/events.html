@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Events
+{% endblock %}
+{% block main %}
+<div class="container">
+<h2>Submit a new session</h2>
+  <form action="{{ url_for('events') }}" method="post">
+    <fieldset>
+      <form data-toggle="validator" role="form">
+        <div class="form-group">
+          <label for="inputName" class="control-label">Session Name</label>
+          <input type="text" data-minlength="1" class="form-control" id="event_name" placeholder="e.g. OE Planning Workshop" required>
+          <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+        <div class="help-block with-errors"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputdate" class="control-label">Session Date</label>
+          <input autocomplete="off" autofocus class="form-control" name="event_date" placeholder="Session date (MM/DD/YYYY)" type="date" required>
+          <div class="help-block with-errors"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputdescription" class="control-label">Session description</label>
+          <input type="text" data-minlength="1" class="form-control" id="event_description" placeholder="Describe the session for viewers" required>
+          <div class="help-block with-errors"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputpresenter" class="control-label">Session presenter</label>
+          <input type="text" data-minlength="1" class="form-control" id="event_presenter" placeholder="Add the name of the presenter" required>
+          <div class="help-block with-errors"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputstarttime" class="control-label">Session start time</label>
+          <input class="form-control" name="event_start_time" placeholder="Session start time" type="time" required>
+          <div class="help-block with-errors"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputendtime" class="control-label">Session end time</label>
+          <input class="form-control" name="event_end_time" placeholder="Session end time" type="time" required>
+        <div class="help-block with-errors"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputlocation" class="control-label">Session location</label>
+          <input type="text" data-minlength="1" class="form-control" id="event_location" placeholder="Session location" required>
+          <div class="help-block with-errors"></div>
+        </div>
+
+        <div id="integerform" class="form-group">
+          <label for="inputseats" class="control-label">Total seats available</label>
+          <input class="form-control" name="total_seats" placeholder="Total seats in the room" type="integer" required>
+          <div class="help-block with-errors"></div>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </fieldset>
+    </div>
+</form>
+</div>
+{% endblock %}
