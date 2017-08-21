@@ -1,0 +1,16 @@
+/* Bootstrap nav CSS - https://codepen.io/bootstrapped/pen/KwYGwq*/
+.example5 .navbar-brand {
+  display: flex;
+  align-items: center;
+}
+.example5 .navbar-brand>img {
+  padding: 7px 14px;
+}
+
+.table-condensed
+{
+    width:30%;
+    margin-left:15%;
+    margin-right:15%;
+}
+

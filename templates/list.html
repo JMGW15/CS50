@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Schedule
+{% endblock %}
+
+{% block main %}
+<div class="container">
+    <h4>A list of individuals registered for {{event_name_sm}}</h4>
+  <table class="table table-condensed">
+    <thead>
+      <tr>
+        <th>Login</th>
+        <th>Name</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+          {% for rows in lists_events %}
+        <td><img src="https://badgephotos.amazon.com/?uid={{rows.list_login}}" img style="	width: 64px;" alt="Photo of {{rows.list_login}}"></td>
+        <td>{{rows.list_login}}</td>
+        <td>{{rows.list_name}}</td>
+        <td>{{rows.list_email}}</td>
+      </tr>
+          {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
