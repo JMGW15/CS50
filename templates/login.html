@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+<div class="container">
+  <h2>Login</h2>
+  <p>Please login before proceeding.</p>  
+    <form action="{{ url_for('login') }}" method="post">
+        <fieldset>
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="login" placeholder="Please submit your Amazon login" type="text"/>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-default" type="submit">Login</button>
+            </div>
+        </fieldset>
+    </form>
+{% endblock %}

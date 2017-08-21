@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Registration Error
+{% endblock %}
+{% block main %}
+<div class="container">
+  <h2>Register</h2>
+  <p>The event you are trying to register for does not exist.</p>
+  <form action="http://ide50-jen-mgw.cs50.io/schedule">
+    <input type="submit" value="Return to the events schedule" />
+</form>
+
+{% endblock %}
+

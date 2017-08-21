@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Schedule
+{% endblock %}
+
+{% block main %}
+<div class="container">
+  <br>
+  <br>
+  <p>Welcome to the T4NT session registration tool.  You'll be able to view a list of upcoming sessions and, based on the availabilty of open seats in the session, register to participate.  A list of sessions you register for will be maintained at the top of the page.  Thank you and please feel free to provide feedback on this tool at <a href="mailto:t4nt@amazon.com?subject=T4NT registration tool feedback">t4nt-core@amazon.com.</a></p>
+  <br>
+  <h4>You are signed in as <b>{{login}}</b></h4>
+  <h2>T4NT sessions you are registered for</h2>
+  <table class="table table-condensed">
+    <div id = list>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Name</th>
+        <th>Presenter</th>
+        <th>Time</th>
+        <th>Location</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        {% for rows in registered_events %}
+        <td>{{rows.reg_event_date}}</td>
+        <td>{{rows.reg_event_name}}</td>
+        <td>{{rows.reg_event_presenter}}</td>
+        <td>{{rows.reg_event_start_time}}</td>
+        <td>{{rows.reg_event_location}}</td>
+        <td><a href="http://ide50-jen-mgw.cs50.io/deregister?&e={{rows.reg_event_id}}"> Deregister</a></td>
+      </tr>
+          {% endfor %}
+    </tbody>
+    </div>
+  </table>
+
+
+  <h2>Upcoming T4NT sessions</h2>
+  <p>The below table includes a list of upcoming T4NT sessions.  Please register for a session by clicking on the register link.</p>
+  <table class="table table-condensed">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Presenter</th>
+        <th>Time</th>
+        <th>Location</th>
+        <th>Total Seats</th>
+        <th>Filled Seats</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        {% for rows in events %}
+        <td>{{rows.event_date}}</td>
+        <td>{{rows.event_name}}</td>
+        <td width="30%">{{rows.event_description}}</td>
+        <td>{{rows.event_presenter}}</td>
+        <div id=starttime><td>{{rows.event_start_time}}</td></div>
+        <td>{{rows.event_location}}</td>
+        <td>{{rows.event_total_seats}}</td>
+        <td>{{rows.event_filled_seats}} <br> <a href="http://ide50-jen-mgw.cs50.io/list?&e={{rows.event_id}}"> View list</a></td>
+        <td><a href="http://ide50-jen-mgw.cs50.io/register?&e={{rows.event_id}}"> Register</a></td>
+      </tr>
+          {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
